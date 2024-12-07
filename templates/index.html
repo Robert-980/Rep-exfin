@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <title>Index</title>
+    </head>
+    <body>
+        <h1>Bienvenido a mi blog</h1>
+        <p>Blog</p>
+        {% include 'nav.html' %}
+        <a href="..\app.py">freecodecamp</a>
+        <img src="{{ url_for('static') }}" alt="alumnos" width="50" height="60">
+        <form action="/add/alumno">
+            <label for="nombre">nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="apellido">apellido</label>
+            <input type="text" name="apellido" id="apellido">
+            <label for="aprobado">aprobado</label>
+            <input type="boolean" name="aprobado" id="aprobado">
+            <label for="nota">nota</label>
+            <input type="real" name="nota" id="nota">
+            <label for="fecha">fecha</label>
+            <input type="timestamp" name="fecha" id="fecha">
+            <button type="submit">Click</button>
+        </form>
+    </body>
+</html>

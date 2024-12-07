@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Create{% endblock %}
+
+{% block content %}
+<h1>Crear un nuevo Post</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="nombre">nombre</label>
+        <input type="text" id="nombre" name="nombre"
+               placeholder="Post title" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="nota">nota</label>
+        <input type="real" id="nota" name="nota"
+               placeholder="Post nota" class="form-control">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

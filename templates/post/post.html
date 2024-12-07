@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post['id'] }}{% endblock %}
+
+{% block content %}
+<h1 class="my-4"><strong>Titulo del Post:</strong> {{ post['nombre'] }}</h1>
+<p><strong>Fecha de creación del Post:</strong> {{ post['fecha'] }}</p>
+<p class="mb-4"><strong>Contenido del Post</strong>: {{ post['nota'] }}</p>
+{% endblock %}
