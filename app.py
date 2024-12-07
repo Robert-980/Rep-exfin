@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, abort, jsonify
 import sqlite3
+from datetime import datetime, time
 
 def get_db_connection():
     conn = sqlite3.connect("alumnos.db")
@@ -46,10 +47,13 @@ def get_one_post(post_id: int):
 def create_one_post():
     data = request.json
     nombre = data.get('nombre')
+    apellido = data.get('apellido')
+    aprobado = data.get('aprobado')
     nota = data.get('nota')
+    fecha = datetime.now()
     
     conn = get_db_connection()
-    conn.execute('INSERT INTO alumnos (nombre, nota) VALUES (?, ?)', (nombre, nota))
+    conn.execute('INSERT INTO alumnos (nombre, apellido, aprobado, nota, fecha) VALUES (?, ?, ?, ?, ?)', (nombre, apellido, aprobado, nota, fecha))
     conn.commit()
     conn.close()
     return jsonify({"message": "Post created"})
